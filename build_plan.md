@@ -1,4 +1,4 @@
-# Build Plan: mock-storm
+# Build Plan: havoc
 
 ## Step 1: LLM Integration
 *   Set up Google Cloud Vertex AI SDK for Python (`google-generativeai` or Vertex specific SDK).

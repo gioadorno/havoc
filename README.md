@@ -1,11 +1,11 @@
-# mock-storm 🌪️
+# havoc 🌪️
 
 **The Chaos Data Generator for Defensive Engineering**
 
 ## Overview
 You need to test your dashboard's virtualization and your backend's memory limits, but you cannot use real client data due to privacy constraints, and standard fake data (like faker.js) is too "clean".
 
-`mock-storm` is a Python CLI pipeline that generates realistic, intentionally flawed datasets. It leverages Google Vertex AI (Gemini) to hallucinate complex edge cases and injects structural chaos based on configurable parameters.
+`havoc` is a Python CLI pipeline that generates realistic, intentionally flawed datasets. It leverages Google Vertex AI (Gemini) to hallucinate complex edge cases and injects structural chaos based on configurable parameters.
 
 ## Features
 *   **LLM-Powered Generation:** Uses Gemini 3.1 Pro to generate highly realistic, domain-specific mock data (e.g., realistic medical records or supply chain logs).
@@ -19,4 +19,4 @@ python generator.py --schema user_table.json --rows 10000 --chaos high --output 
 ```
 
 ## FDE Philosophy
-**Attack your own infrastructure.** Proving system resilience means hitting it with the worst possible data before the client does. If your pipeline survives the `mock-storm`, it will survive production.
+**Attack your own infrastructure.** Proving system resilience means hitting it with the worst possible data before the client does. If your pipeline survives the `havoc`, it will survive production.

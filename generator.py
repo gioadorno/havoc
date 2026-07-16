@@ -8,7 +8,7 @@ import vertexai
 from vertexai.generative_models import GenerativeModel, GenerationConfig
 
 def parse_args():
-    parser = argparse.ArgumentParser(description="🌪️ mock-storm: The Chaos Data Generator")
+    parser = argparse.ArgumentParser(description="🌪️ havoc: The Chaos Data Generator")
     parser.add_argument("--schema", type=str, required=True, help="Path to JSON schema file")
     parser.add_argument("--rows", type=int, default=100, help="Number of rows to generate")
     parser.add_argument("--chaos", type=str, choices=["none", "low", "medium", "high"], default="low", help="Level of intentional data corruption")
