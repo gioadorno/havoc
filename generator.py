@@ -13,14 +13,17 @@ def parse_args():
     parser.add_argument("--rows", type=int, default=100, help="Number of rows to generate")
     parser.add_argument("--chaos", type=str, choices=["none", "low", "medium", "high"], default="low", help="Level of intentional data corruption")
     parser.add_argument("--output", type=str, default="mock_dump.csv", help="Output file path (CSV or JSON)")
+    parser.add_argument("--model", type=str, default=None, help="Vertex AI model name (Default: env VERTEX_MODEL_NAME or gemini-3.1-pro-preview)")
     return parser.parse_args()
 
-def init_gemini():
+def init_gemini(model_name=None):
     project = os.environ.get("GOOGLE_VERTEX_PROJECT", "extreme-karma-gm")
     location = os.environ.get("GOOGLE_VERTEX_LOCATION", "global")
     
     vertexai.init(project=project, location=location)
-    return GenerativeModel('gemini-3.1-pro-preview') # Fallback to a stable Vertex model
+    
+    selected_model = model_name or os.environ.get("VERTEX_MODEL_NAME", "gemini-3.1-pro-preview")
+    return GenerativeModel(selected_model)
 
 def generate_clean_data(model, schema_str, num_rows):
     prompt = f"""
@@ -91,7 +94,7 @@ def main():
     with open(args.schema, 'r') as f:
         schema_str = f.read()
         
-    model = init_gemini()
+    model = init_gemini(args.model)
     
     batch_size = 50
     all_data = []
