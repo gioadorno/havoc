@@ -1,5 +1,8 @@
 # havoc 🌪️
 
+> 📖 **Real-World Usage:** Check out [EXAMPLES.md](EXAMPLES.md) for practical FDE workflows and terminal outputs.
+
+
 **The Chaos Data Generator for Defensive Engineering**
 
 ## Overview
