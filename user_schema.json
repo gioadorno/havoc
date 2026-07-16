@@ -1,0 +1,7 @@
+{
+  "id": "Integer (1 to 99999)",
+  "full_name": "String (First and Last name)",
+  "email": "String (valid email format)",
+  "account_balance": "Float (between 0.00 and 50000.00)",
+  "signup_date": "Date (ISO8601 format)"
+}
